@@ -1,8 +1,4 @@
-" sensible.vim - Defaults everyone can agree on
-" Maintainer:   Tim Pope <http://tpo.pe/>
-" Version:      1.2
-
-" My additions
+" Based on sensible.vim
 
 " Vundle stuff begin
 set nocompatible              " be iMproved, required
@@ -17,11 +13,19 @@ Plugin 'HenryNewcomer/vim-theme-papaya'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Vundle stuff end
-
-colorscheme papaya
-se nu
-set exrc
+set complete-=i
 set secure
+set exrc
+
+" Visual
+colorscheme papaya
+se nu " Line numbers
+" Highlight the cursor if you reach more than 80 chars in a row
+highlight ColorColumn ctermbg=magenta
+call matchadd('colorColumn', '\%80v', 100)
+" Underline current row where cursor is
+set cursorline
+set ruler
 
 if exists('g:loaded_sensible') || &compatible
   finish
@@ -40,7 +44,6 @@ endif
 
 set autoindent
 set backspace=indent,eol,start
-set complete-=i
 set smarttab
 
 set nrformats-=octal
@@ -57,7 +60,6 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 set laststatus=2
-set ruler
 set wildmenu
 
 if !&scrolloff
