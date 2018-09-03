@@ -3,7 +3,22 @@
 " Version:      1.2
 
 " My additions
-colorscheme slate
+
+" Vundle stuff begin
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'HenryNewcomer/vim-theme-papaya'
+call vundle#end()            " required
+filetype plugin indent on    " required
+" Vundle stuff end
+
+colorscheme papaya
 se nu
 set exrc
 set secure
