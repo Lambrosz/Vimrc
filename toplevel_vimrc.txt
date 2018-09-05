@@ -1,31 +1,37 @@
-" Based on sensible.vim
+"=== Based on sensible.vim ===
 
-" Vundle stuff begin
+"=== Vundle Settings &  Plugins ===
 set nocompatible              " be iMproved, required
 filetype off                  " required
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scooloose/nerdtree'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'HenryNewcomer/vim-theme-papaya'
 call vundle#end()            " required
 filetype plugin indent on    " required
-" Vundle stuff end
+
+"=== Security ===
 set complete-=i
 set secure
 set exrc
 
-" Visual
-colorscheme papaya
+"=== Aesthetic Settings ===
 se nu " Line numbers
+set cursorline " Underline/Highlight the current line
+set ruler " Show line/column number info on bottom right
+syntax on 
+colorscheme jellybeans
 " Highlight the cursor if you reach more than 80 chars in a row
 highlight ColorColumn ctermbg=magenta
 call matchadd('colorColumn', '\%80v', 100)
-" Underline current row where cursor is
-set cursorline
-set ruler
+
+"=== Settings for NERDTree ===
+autocmd VimEnter * NERDTree " Auto start NERDTree
+autocmd VimEnter * NERDTree 
+autocmd VimEnter * wincmd p
+map <C-n> :NERDTree
 
 if exists('g:loaded_sensible') || &compatible
   finish
@@ -118,4 +124,3 @@ endif
 
 inoremap <C-U> <C-G>u<C-U>
 
-" vim:set ft=vim et sw=2:
