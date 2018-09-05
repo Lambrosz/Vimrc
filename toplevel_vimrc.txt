@@ -26,6 +26,9 @@ colorscheme jellybeans
 " Highlight the cursor if you reach more than 80 chars in a row
 highlight ColorColumn ctermbg=magenta
 call matchadd('colorColumn', '\%80v', 100)
+if has('unix')
+	set t_Co=256
+endif
 
 "=== Settings for NERDTree ===
 autocmd VimEnter * NERDTree " Auto start NERDTree
