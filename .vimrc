@@ -1,5 +1,3 @@
-"=== Based on sensible.vim ===
-
 "=== Vundle Settings &  Plugins ===
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -38,6 +36,9 @@ map <C-n> :NERDTree
 " This closes NERDTree if it is the last 'file' open in vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+
+"=== Everything below from sensible.vim ===
+"==========================================
 
 if exists('g:loaded_sensible') || &compatible
   finish
