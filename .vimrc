@@ -1,4 +1,5 @@
 "=== Vundle Settings &  Plugins ===
+"==================================
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -11,11 +12,13 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "=== Security ===
+"================
 set complete-=i
 set secure
 set exrc
 
 "=== Aesthetic Settings ===
+"==========================
 se nu " Line numbers
 set cursorline " Underline/Highlight the current line
 set ruler " Show line/column number info on bottom right
@@ -29,6 +32,7 @@ if has('unix')
 endif
 
 "=== Settings for NERDTree ===
+"=============================
 autocmd VimEnter * NERDTree " Auto start NERDTree
 autocmd VimEnter * NERDTree 
 autocmd VimEnter * wincmd p
@@ -37,9 +41,8 @@ map <C-n> :NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
-"=== Everything below from sensible.vim ===
-"==========================================
-
+"=== Everything below is from sensible.vim ===
+"=============================================
 if exists('g:loaded_sensible') || &compatible
   finish
 else
