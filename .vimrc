@@ -35,6 +35,9 @@ autocmd VimEnter * NERDTree " Auto start NERDTree
 autocmd VimEnter * NERDTree 
 autocmd VimEnter * wincmd p
 map <C-n> :NERDTree
+" This closes NERDTree if it is the last 'file' open in vim
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
 if exists('g:loaded_sensible') || &compatible
   finish
