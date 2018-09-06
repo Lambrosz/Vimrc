@@ -1,5 +1,3 @@
-"=== Based on sensible.vim ===
-
 "=== Vundle Settings &  Plugins ===
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -35,6 +33,9 @@ autocmd VimEnter * NERDTree " Auto start NERDTree
 autocmd VimEnter * NERDTree 
 autocmd VimEnter * wincmd p
 map <C-n> :NERDTree
+
+"=== Everything below from sensible.vim ===
+"==========================================
 
 if exists('g:loaded_sensible') || &compatible
   finish
