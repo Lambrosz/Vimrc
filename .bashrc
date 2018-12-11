@@ -22,3 +22,13 @@ alias du='du -h'
 #
 export HISTTIMEFORMAT='%b %d %I:%M %p '
 export HISTCONTROL=ignoreboth		# could also be: ignoredups:ignorespace
+function check_vpn {
+	pia="$(curl https://www.privateinternetaccess.com/ 2> /dev/null)"
+	if [[ ${pia} = *"You are protected by PIA"* ]]; then
+		printf "\033[1;32mPIA VPN is ON\n\033\e[0m"
+	else
+		printf "\033[1;31mPIA VPN is OFF\n\033\e[0m"
+	fi
+}
+check_vpn
+
