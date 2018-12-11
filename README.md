@@ -4,4 +4,3 @@ Other settings:
 
 TODO:
 - Create bash script to install these files on the current system.
-- Add tmux.conf to the repo.
