@@ -7,8 +7,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scooloose/nerdtree'
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'tpope/vim-surround'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -41,6 +44,10 @@ map <C-n> :NERDTree
 " This closes NERDTree if it is the last 'file' open in vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+"=== Other Settings ===
+"======================
+
+set mouse=a
 
 "=== Everything below is from sensible.vim ===
 "=============================================
