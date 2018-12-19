@@ -48,6 +48,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "======================
 
 set mouse=a
+" For jumping correctly around a Python file
+autocmd FileType python nnoremap <buffer> [[ ?^class\\|^\s*def<CR>
+autocmd FileType python nnoremap <buffer> ]] /^class\\|^\s*def<CR>
 
 "=== Everything below is from sensible.vim ===
 "=============================================
