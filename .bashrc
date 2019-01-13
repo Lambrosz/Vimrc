@@ -2,7 +2,7 @@ export PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 
 # Colours and settings for command prompt
 #
-export PS1="\[\033[38;5;48m\]\u\[$(tput sgr0)\]\[\033[38;5;44m\]@\h\[$(tput sgr0)\]\[\033[38;5;33m\]> \[$(tput sgr0)\]"
+export PS1="\[\033[38;5;48m\]\u\[$(tput sgr0)\]\[\033[38;5;44m\]@\h\[$(tput sgr0)\]\[\033[38;5;33m\]:\W> \[$(tput sgr0)\]"
 
 # Aliases
 #
