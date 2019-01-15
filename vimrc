@@ -51,6 +51,7 @@ set mouse=a
 " For jumping correctly around a Python file
 autocmd FileType python nnoremap <buffer> [[ ?^class\\|^\s*def<CR>
 autocmd FileType python nnoremap <buffer> ]] /^class\\|^\s*def<CR>
+set nofoldenable
 
 "=== Everything below is from sensible.vim ===
 "=============================================
