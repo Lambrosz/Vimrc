@@ -4,16 +4,40 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+Bundle 'christoomey/vim-sort-motion'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scooloose/nerdtree'
-Plugin 'nanotech/jellybeans.vim'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'christoomey/vim-system-copy'
+Plugin 'christoomey/vim-titlecase'
 Plugin 'itchyny/lightline.vim'
+Plugin 'rakr/vim-one'
+Plugin 'scooloose/nerdtree'
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/ReplaceWithRegister'
+Plugin 'vimwiki/vimwiki'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+"=== VimWiki settings ===
+"========================
+" vimwiki - Personal Wiki for Vim
+" https://github.com/vimwiki/vimwiki
+set nocompatible
+filetype plugin on
+syntax on
+" vimwiki with markdown support
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+" helppage -> :h vimwiki-syntax 
+
+" vim-instant-markdown - Instant Markdown previews from Vim
+" https://github.com/suan/vim-instant-markdown
+let g:instant_markdown_autostart = 0	" disable autostart
+map <leader>md :InstantMarkdownPreview<CR>
 
 "=== Security ===
 "================
@@ -27,7 +51,11 @@ se nu " Line numbers
 set cursorline " Underline/Highlight the current line
 set ruler " Show line/column number info on bottom right
 syntax on 
-colorscheme jellybeans
+
+colorscheme one
+set background=dark " for the dark version
+"set background=light " for the light version
+
 " Highlight the cursor if you reach more than 80 chars in a row
 highlight ColorColumn ctermbg=magenta
 call matchadd('colorColumn', '\%80v', 100)
